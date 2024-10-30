@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(134, 205, 247);
+    user-select: none;
+}
+.container {
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background: linear-gradient( 325deg, #03001e 0%, #7303c0 30%, #ec38bc 70%, #fdeff9 100% );
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+h2 {
+    white-space: w;
+    font-size: 3em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+div .wrapper .wrapper {
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+a {
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+    cursor: pointer;
+}
+a span {
+    position: relative;
+    z-index: 2;
+}
+a:after {
+    border-radius: 10px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all 0.35s;
+}
+a:hover {
+    color: #fff;
+}
+a:hover:after {
+    width: 100%;
+}
+
+.game {
+    display: flex;
+    height: 430px;
+    width: 430px;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+
+}
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #404040;
+    transform: rotateY(0deg);
+    transition: 0.25s;
+    backface-visibility: hidden;
+
+}
+.item.boxOpen {
+    transform:  rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMarch::after {
+    transform: rotateY(180deg);
+}
